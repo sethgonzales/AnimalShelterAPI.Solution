@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations; //this model has valid validation
+using System.ComponentModel.DataAnnotations;
 
 namespace AnimalShelter.Models
 {
