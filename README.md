@@ -53,4 +53,27 @@ Explore API endpoints in your browser or in Postman. If using Swagger, navigate 
 
 
 ### Note on Pagination
-The Animal Shelter API defaults to 10 items per page, beginning on page number 1. To change the number of items (`pageSize`), or the starting page number (`pageIndex`), you can edit the search parameters following the example below.
+The Animal Shelter API defaults to 10 items per page, beginning on page number 1. To change the number of items (`pageSize`), or the starting page number (`pageIndex`), you can edit the search parameters following the example below.   
+
+### Animal Shelter API Endpoints
+Base URL: ```http://localhost:5000```
+
+| Request Type | Path |
+| :---: | :---: | 
+| GET | /api/pets/ |
+| GET | /api/pets/{id} |
+| POST | /api/pets/ |
+| PUT  | /api/pets/{id} |
+| DELETE | /api/pets/{id} |
+
+### Path Parameters
+| Parameter | Type | Default | Required | Description |
+| :---: | :---: | :---: | :---: | --- |
+| pageIndex | Number | 1 | not required | Returns the requested index page. |
+| pageSize | Number | 10 | not required | Returns up to the requested number of pets per page. |
+| name | String | none | not required | Return pets matching requested name. |
+| species | String | none | not required | Return pets matching requested species |
+| breed | String | none | not required | Return pets matching requested breed |
+| color | String | none | not required | Return pets matching requested color |
+| minumumAge | Number | none | not required | Returns pets with an age value that is greater than or equal to the specified minimumAge number. |
+
