@@ -77,3 +77,39 @@ Base URL: ```http://localhost:5000```
 | color | String | none | not required | Return pets matching requested color |
 | minumumAge | Number | none | not required | Returns pets with an age value that is greater than or equal to the specified minimumAge number. |
 
+
+### Example Queries
+This query will return the first page containing up to 10 pets.
+```
+http://localhost:5000/api/Pets
+```
+This query will also return the first page containing up to 5 pets.
+```
+http://localhost:5000/api/Pets?pageIndex=1&pageSize=5
+```
+This query will return the pet with the id of 3.
+```
+http://localhost:5000/api/Pets/3
+```
+This query will return the first page containing up to 5 pets of the species Cat.
+```
+http://localhost:5000/api/Pets?species=Cat&pageIndex=1&pageSize=5
+```
+This query will return the first page containing up to 5 pets of the species Cat, name Felix, breed Tuxedo, and minimum age of 3.
+```
+http://localhost:5000/api/Pets?species=Cat&name=Felix&breed=Tuxedo&minimumAge=3&pageIndex=1&pageSize=5
+```
+
+### Example JSON Response
+```
+[
+  {
+    "animalId": 3,
+    "name": "Felix",
+    "species": "Cat",
+    "breed": "Tuxedo",
+    "color": "Black and White"
+    "age": 3
+  }
+]
+```
