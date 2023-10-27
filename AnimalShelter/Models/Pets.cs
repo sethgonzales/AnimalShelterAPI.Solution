@@ -9,7 +9,7 @@ namespace AnimalShelter.Models
     [StringLength(20)]
     public string Name { get; set; }
     [StringLength(20)]
-    [Required]
+    [Required] 
     public string Species { get; set; }
     [StringLength(20)]
     [Required]

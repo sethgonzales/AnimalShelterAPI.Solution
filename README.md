@@ -10,6 +10,7 @@
 * ASP.NET Core MVC
 * Entity Framework Core
 * Postman v10.19
+* Swashbuckle v6.2.3
 * MySQL
 * MySQL Workbench
 
@@ -40,3 +41,16 @@ This is a Web API application that shares and stores data regarding pets logged 
   }
 }
 ```
+### Running the project
+* Navigate to this project's production directory `AnimalShelter`.
+* Recreate the database by running the command `$ dotnet ef database update` in your terminal.
+* Navigate to your MySQLWorkbench to double check that your database has been built without error.
+* In the command line, run the command `$ dotnet run` or `$ dotnet watch run` to compile and execute the application.
+   * To compile the application without running it, use the following command: `$ dotnet build`.
+
+## API Documentation 
+Explore API endpoints in your browser or in Postman. If using Swagger, navigate to https://localhost:5001/swagger/index.html, or http://localhost:5000/swagger/index.html to test API endpoints
+
+
+### Note on Pagination
+The Animal Shelter API defaults to 10 items per page, beginning on page number 1. To change the number of items (`pageSize`), or the starting page number (`pageIndex`), you can edit the search parameters following the example below.

@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
 
 
 builder.Services.AddDbContext<AnimalShelterContext>(
                   dbContextOptions => dbContextOptions
                     .UseMySql(
-                      builder.Configuration["ConnectionStrings:DefaultConnection"], 
+                      builder.Configuration["ConnectionStrings:DefaultConnection"],
                       ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                     )
                   )
@@ -25,7 +25,7 @@ if (app.Environment.IsDevelopment())
   app.UseSwagger();
   app.UseSwaggerUI();
 }
-else 
+else
 {
   app.UseHttpsRedirection();
 }

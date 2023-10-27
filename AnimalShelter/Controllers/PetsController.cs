@@ -4,7 +4,7 @@ using AnimalShelter.Models;
 
 namespace AnimalShelter.Controllers
 {
-  [Route("api/[controller]")] 
+  [Route("api/[controller]")]
   [ApiController]
   public class PetsController : ControllerBase
   {
@@ -66,38 +66,38 @@ namespace AnimalShelter.Controllers
     }
 
     // POST api/Pets
-    [HttpPost] 
+    [HttpPost]
     public async Task<ActionResult<Pet>> Post(Pet pet)
     {
       _db.Pets.Add(pet);
       await _db.SaveChangesAsync();
-      return CreatedAtAction(nameof(GetPet), new { id = pet.PetId }, pet); 
+      return CreatedAtAction(nameof(GetPet), new { id = pet.PetId }, pet);
     }
 
     // PUT: api/Pets/5
-    [HttpPut("{id}")] 
+    [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Pet pet)
     {
-      if (id != pet.PetId) 
+      if (id != pet.PetId)
       {
-        return BadRequest(); 
+        return BadRequest();
       }
 
-      _db.Pets.Update(pet); 
+      _db.Pets.Update(pet);
 
       try
       {
         await _db.SaveChangesAsync();
       }
-      catch (DbUpdateConcurrencyException) 
+      catch (DbUpdateConcurrencyException)
       {
-        if (!PetExists(id)) 
+        if (!PetExists(id))
         {
-          return NotFound(); 
+          return NotFound();
         }
         else
         {
-          throw; 
+          throw;
         }
       }
 
