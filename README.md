@@ -144,4 +144,4 @@ SOFTWARE.
 
 If you run into any issues, or would like to contribute to our code, please email: sethgonzales157@gmail.com.
 
-<center><a href="#">Return to Top</a></center>
+<p align="center"><a href="#">Return to Top</a></p>
