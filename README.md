@@ -16,7 +16,7 @@
 
 ## Description
 
-This is a Web API application that shares and stores data regarding pets logged at the Animal Shelter. Following full CRUD functionality, users can access the data, update pets, delete pets, and create new pets. This API utilizes pagination to limit the number of results given at a time when a user makes a request to see a list of all pets. A set list of pets are seeded into the database upon download, and can be removed if needed.
+This is a Web API application that shares and stores data regarding pets logged at the Animal Shelter. Following full CRUD functionality, users can access the data, update pets, delete pets, and create new pets. This API utilizes pagination to limit the number of results given at a time when a user makes a request to see a list of all pets. A set list of pets are seeded into the database upon download and can be removed if needed.
 
 ## Setup and Installation Requirements
 
@@ -25,7 +25,7 @@ This is a Web API application that shares and stores data regarding pets logged 
 
 ### Launching and Setting Up the Project
 * Navigate to the Animal Shelter Api repository [GitHub](https://github.com/sethgonzales/AnimalShelterAPI.Solution).
-* Clone the repository down using `$ git clone https://github.com/sethgonzales/AnimalShelterAPI.Solution.git n` in your terminal.
+* Clone the repository down using `$ git clone https://github.com/sethgonzales/AnimalShelterAPI.Solution.git` in your terminal.
 * Within the production directory `AnimalShelter`, create a new file called `appsettings.json`.
 * Within `appsettings.json`, put in the following code, replacing the `database`, `uid`, and `pwd` values with your own database name, username, and password for MySQL.
 ```json
@@ -45,7 +45,7 @@ This is a Web API application that shares and stores data regarding pets logged 
 * Navigate to this project's production directory `AnimalShelter`.
 * Recreate the database by running the command `$ dotnet ef database update` in your terminal.
 * Navigate to your MySQLWorkbench to double check that your database has been built without error.
-* In the command line, run the command `$ dotnet run` or `$ dotnet watch run` to compile and execute the application.
+* In the command line, run the command `$ dotnet run` or `$ dotnet watch run` to compile and execute the api in your browser.
    * To compile the application without running it, use the following command: `$ dotnet build`.
 
 ## API Documentation 
@@ -113,3 +113,35 @@ http://localhost:5000/api/Pets?species=Cat&name=Felix&breed=Tuxedo&minimumAge=3&
   }
 ]
 ```
+## Known Bugs
+
+* There are no known bugs for this API. If you find any, please report them to sethgonzales157@gmail.com
+
+## MIT License
+```
+Copyright (c) 2023 Seth Gonzales
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Contact Information
+
+If you run into any issues, or would like to contribute to our code, please email: sethgonzales157@gmail.com.
+
+<center><a href="#">Return to Top</a></center>
