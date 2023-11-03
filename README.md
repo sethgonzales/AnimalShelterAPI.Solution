@@ -71,36 +71,46 @@ Base URL: ```http://localhost:5000```
 | :---: | :---: | :---: | :---: | --- |
 | pageIndex | Number | 1 | not required | Returns the requested index page. |
 | pageSize | Number | 10 | not required | Returns up to the requested number of pets per page. |
-| name | String | none | not required | Return pets matching requested name. |
-| species | String | none | not required | Return pets matching requested species |
-| breed | String | none | not required | Return pets matching requested breed |
-| color | String | none | not required | Return pets matching requested color |
-| minumumAge | Number | none | not required | Returns pets with an age value that is greater than or equal to the specified minimumAge number. |
+| name | String | none | required for POST & PUT | Return pets matching requested name. |
+| species | String | none | required for POST & PUT | Return pets matching requested species. |
+| breed | String | none | required for POST & PUT | Return pets matching requested breed. |
+| color | String | none | required for POST & PUT | Return pets matching requested color. |
+| minimumAge | Number | none | not required | Returns pets with an age value that is greater than or equal to the specified minimumAge number. |
+| id | Number | none | required for PUT and DELETE | The ID of the pet requested to see, update, or delete. It must be included in the JSON body of the PUT request. |
 
+### Example GET Requests (Retrieve Lists of Pets)
+To retrieve lists of pets by criteria, send GET requests to the following endpoints. 
 
-### Example Queries
+**Requests:**
+
 This query will return the first page containing up to 10 pets.
 ```
-http://localhost:5000/api/Pets
+GET http://localhost:5000/api/Pets
 ```
-This query will also return the first page containing up to 5 pets.
+This query will return the first page containing up to 5 pets.
 ```
-http://localhost:5000/api/Pets?pageIndex=1&pageSize=5
-```
-This query will return the pet with the id of 3.
-```
-http://localhost:5000/api/Pets/3
+GET http://localhost:5000/api/Pets?pageIndex=1&pageSize=5
 ```
 This query will return the first page containing up to 5 pets of the species Cat.
 ```
-http://localhost:5000/api/Pets?species=Cat&pageIndex=1&pageSize=5
+GET http://localhost:5000/api/Pets?species=Cat&pageIndex=1&pageSize=5
 ```
 This query will return the first page containing up to 5 pets of the species Cat, name Felix, breed Tuxedo, and minimum age of 3.
 ```
-http://localhost:5000/api/Pets?species=Cat&name=Felix&breed=Tuxedo&minimumAge=3&pageIndex=1&pageSize=5
+GET http://localhost:5000/api/Pets?species=Cat&name=Felix&breed=Tuxedo&minimumAge=3&pageIndex=1&pageSize=5
 ```
 
-### Example JSON Response
+### Example GET Request (Retrieve a Pet by ID)
+To retrieve a specific pet by its ID, send a GET request to the respective pet's endpoint (e.g., /api/pets/{id}). Replace {id} with the actual ID of the pet you want to retrieve.
+
+**Request:**
+
+This query will return the pet with the id of 3.
+```
+GET http://localhost:5000/api/Pets/3
+```
+
+**Example JSON Response**
 ```
 [
   {
@@ -109,10 +119,61 @@ http://localhost:5000/api/Pets?species=Cat&name=Felix&breed=Tuxedo&minimumAge=3&
     "species": "Cat",
     "breed": "Tuxedo",
     "color": "Black and White"
-    "age": 3
+    "age": 3 
   }
 ]
 ```
+
+### Example POST Request (Create a New Pet)
+To create a new pet, send a POST request to the following endpoint. Include the pet details in the JSON body.
+
+**Request:**
+```
+POST http://localhost:5000/api/pets/
+```
+**Example JSON Body**
+```
+[
+  {
+  "name": "New Pet",
+  "species": "New Species",
+  "breed": "New Breed",
+  "color": "New Color",
+  "age": 2
+  }
+]
+```
+
+
+### Example PUT Request (Update a Pet)
+To update a pet, you must send a PUT request to the respective pet's endpoint (e.g., `/api/pets/{id}`). Ensure that you include the `id` parameter in the JSON body to specify which pet to update. Here's an example of a PUT request:
+
+**Request:**
+```
+PUT http://localhost:5000/api/pets/3
+```
+**Example JSON Body:**
+```
+[
+  {
+    "id": 3,
+    "name": "New Name",
+    "species": "New Species",
+    "breed": "New Breed",
+    "color": "New Color",
+    "age": 4
+  }
+]
+```
+### Example DELETE Request (Delete a Pet)
+To delete a pet, send a DELETE request to the respective pet's endpoint (e.g., /api/pets/{id}). Replace {id} with the actual ID of the pet you want to delete.
+
+**Request:**
+
+```
+DELETE http://localhost:5000/api/pets/3
+```
+
 ## Known Bugs
 
 * There are no known bugs for this API. If you find any, please report them to sethgonzales157@gmail.com
